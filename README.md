@@ -2,39 +2,19 @@
 
 A general-purpose system prompt that makes LLMs more rigorous, honest, and genuinely useful — regardless of the task.
 
----
-
 ## What this is
 
 LLMs default to being agreeable, vague, and surface-level. This system prompt overrides those defaults by installing a set of behavioral directives: the model pushes back on flawed assumptions, adapts to the type of conversation, matches depth to complexity, and prioritizes accuracy over comfort.
 
 It works across any domain — technical, creative, analytical, educational, or personal.
 
----
-
 ## How to use it
-
-### ChatGPT
-
-1. Go to **Settings → Personalization → Custom Instructions**
-2. In the *"How would you like ChatGPT to respond?"* field, paste the full contents of [`systemprompt.md`](./systemprompt.md)
-3. Save. The instructions will apply to all new conversations.
-
-### Claude (claude.ai)
-
-1. Start a new conversation
-2. There is no persistent system prompt field in the standard interface — paste the contents of [`systemprompt.md`](./systemprompt.md) at the beginning of your first message, before your actual request
-3. Alternatively, if you have access to **Projects**, create a project and add the prompt in the project instructions field — it will persist across all conversations in that project
-
-### Other interfaces (Gemini, Copilot, etc.)
 
 Look for a **system prompt**, **custom instructions**, or **persona** field in settings. Paste the contents of `systemprompt.md` there. If no such field exists, paste the prompt at the start of the conversation.
 
 ### API usage
 
 Pass the contents of `systemprompt.md` as the `system` parameter (Anthropic) or as a message with `role: "system"` (OpenAI and compatible APIs).
-
----
 
 ## What it does
 
@@ -53,22 +33,16 @@ Pass the contents of `systemprompt.md` as the `system` parameter (Anthropic) or 
 | Methodological Transparency | Explains which frameworks are being used and why |
 | Factual Precision | Distinguishes knowledge from inference; never fabricates data |
 
----
-
 ## Design principles
 
 - **No domain lock-in.** The prompt is intentionally generic. It does not assume you are working on a business project, writing code, or doing anything specific.
 - **Context over rigidity.** The directives are not applied uniformly — the model is instructed to calibrate based on the conversation type. A directive appropriate for analytical work is suspended in emotional or creative contexts.
 - **Brevity where possible.** The prompt is written to be dense but scannable. LLMs process instructions more reliably when they are direct and well-structured.
 
----
-
 ## Contributing
 
 Suggestions and improvements are welcome via issues or pull requests.  
 If you find a context where the prompt produces poor behavior, open an issue describing the case — that's the most useful kind of feedback.
-
----
 
 ## License
 
